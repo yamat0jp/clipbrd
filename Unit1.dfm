@@ -12,6 +12,7 @@ object Form1: TForm1
   Font.Name = 'Segoe UI'
   Font.Style = []
   PopupMenu = PopupMenu1
+  PopupMode = pmExplicit
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
