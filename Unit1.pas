@@ -20,6 +20,8 @@ type
     N2: TMenuItem;
     N3: TMenuItem;
     Timer1: TTimer;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure ClipboardWatcher1Change(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);

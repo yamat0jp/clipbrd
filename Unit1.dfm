@@ -29,6 +29,21 @@ object Form1: TForm1
     ExplicitWidth = 105
     ExplicitHeight = 105
   end
+  object Label1: TLabel
+    Left = 112
+    Top = 104
+    Width = 185
+    Height = 30
+    Caption = 'FDELPHI Forum '#12380#12360#12383' (QZC05100) Unit CBWatch'
+    WordWrap = True
+  end
+  object Label2: TLabel
+    Left = 184
+    Top = 64
+    Width = 26
+    Height = 15
+    Caption = #21332#21147
+  end
   object Panel1: TPanel
     Left = 0
     Top = 274
