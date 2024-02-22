@@ -105,15 +105,20 @@ end;
 procedure TForm1.N2Click(Sender: TObject);
 begin
   if DirectoryExists(Edit1.Text) then
-    ShellExecute(Handle, 'open', 'explorer.exe', PChar(QuotedStr(Edit1.Text)),
-      nil, SW_SHOWNORMAL);
+    ShellExecute(Handle, 'open', 'explorer.exe', PChar(Edit1.Text), nil,
+      SW_SHOWNORMAL);
 end;
 
 procedure TForm1.SpeedButton1Click(Sender: TObject);
+var
+  s: string;
 begin
   with OKRightDlg.DirectoryOutline1 do
     if OKRightDlg.ShowModal = mrOK then
-      Edit1.Text := Items[SelectedItem].FullPath;
+    begin
+      s := Items[SelectedItem].FullPath;
+      Edit1.Text := 'C:\' + Copy(s, 5, Length(s));
+    end;
 end;
 
 procedure TForm1.Timer1Timer(Sender: TObject);

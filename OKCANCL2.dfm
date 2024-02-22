@@ -72,6 +72,7 @@ object OKRightDlg: TOKRightDlg
       8000800080008000800080008000800080008000800080008000800080008000
       80008000800080008000}
     TabOrder = 2
+    TextCase = tcAsIs
     Data = {10}
   end
 end
