@@ -6,7 +6,9 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, CBWatch, Vcl.ExtCtrls, Vcl.ExtDlgs,
-  Vcl.Buttons, Vcl.StdCtrls, System.Win.TaskbarCore, Vcl.Taskbar, Vcl.Menus;
+  Vcl.Buttons, Vcl.StdCtrls, System.Win.TaskbarCore, Vcl.Taskbar, Vcl.Menus,
+  System.Actions, Vcl.ActnList, Vcl.PlatformDefaultStyleActnCtrls, Vcl.ActnMan,
+  Vcl.ToolWin, Vcl.ActnCtrls;
 
 type
   TForm1 = class(TForm)
@@ -16,12 +18,17 @@ type
     SpeedButton1: TSpeedButton;
     TrayIcon1: TTrayIcon;
     PopupMenu1: TPopupMenu;
-    N1: TMenuItem;
-    N2: TMenuItem;
-    N3: TMenuItem;
     Timer1: TTimer;
     Label1: TLabel;
     Label2: TLabel;
+    ActionManager1: TActionManager;
+    Action1: TAction;
+    Action2: TAction;
+    N1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    ActionToolBar1: TActionToolBar;
+    Action3: TAction;
     procedure ClipboardWatcher1Change(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure FormCloseQuery(Sender: TObject; var CanClose: Boolean);
@@ -31,6 +38,7 @@ type
     procedure N2Click(Sender: TObject);
     procedure Edit1Change(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure Action3Execute(Sender: TObject);
   private
     { Private êÈåæ }
     query: Boolean;
@@ -47,6 +55,11 @@ implementation
 {$R *.dfm}
 
 uses Clipbrd, System.IOUtils, OKCANCL2, Winapi.ShellAPI, Vcl.Samples.DirOutln;
+
+procedure TForm1.Action3Execute(Sender: TObject);
+begin
+  Close;
+end;
 
 procedure TForm1.ClipboardWatcher1Change(Sender: TObject);
 var

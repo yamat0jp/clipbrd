@@ -18,9 +18,9 @@ object Form1: TForm1
   TextHeight = 15
   object Image1: TImage
     Left = 0
-    Top = 0
+    Top = 25
     Width = 418
-    Height = 274
+    Height = 249
     Align = alClient
     Proportional = True
     Stretch = True
@@ -72,6 +72,28 @@ object Form1: TForm1
       OnChange = Edit1Change
     end
   end
+  object ActionToolBar1: TActionToolBar
+    Left = 0
+    Top = 0
+    Width = 418
+    Height = 25
+    ActionManager = ActionManager1
+    Caption = 'ActionToolBar1'
+    Color = clMenuBar
+    ColorMap.DisabledFontColor = 10461087
+    ColorMap.HighlightColor = clWhite
+    ColorMap.BtnSelectedFont = clWhite
+    ColorMap.SelectedFontColor = clWhite
+    ColorMap.UnusedColor = clWhite
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    Spacing = 0
+    ExplicitWidth = 410
+  end
   object TrayIcon1: TTrayIcon
     PopupMenu = PopupMenu1
     Visible = True
@@ -82,16 +104,14 @@ object Form1: TForm1
   object PopupMenu1: TPopupMenu
     Left = 296
     Top = 48
-    object N2: TMenuItem
-      Caption = #38283#12367
-      OnClick = N2Click
+    object N1: TMenuItem
+      Action = Action1
     end
-    object N3: TMenuItem
+    object N2: TMenuItem
       Caption = '-'
     end
-    object N1: TMenuItem
-      Caption = #32066#20102
-      OnClick = N1Click
+    object N3: TMenuItem
+      Action = Action2
     end
   end
   object Timer1: TTimer
@@ -100,5 +120,42 @@ object Form1: TForm1
     OnTimer = Timer1Timer
     Left = 120
     Top = 128
+  end
+  object ActionManager1: TActionManager
+    ActionBars = <
+      item
+        Items = <
+          item
+            Action = Action1
+            Caption = #32066#20102'(&Y)'
+          end
+          item
+            Caption = '-'
+          end
+          item
+            Action = Action2
+            Caption = #38283#12367'(&Z)'
+          end
+          item
+            Action = Action3
+            Caption = #38281#12376#12427'(&X)'
+          end>
+        ActionBar = ActionToolBar1
+      end>
+    Left = 336
+    Top = 120
+    StyleName = 'Platform Default'
+    object Action1: TAction
+      Caption = #32066#20102
+      OnExecute = N1Click
+    end
+    object Action2: TAction
+      Caption = #38283#12367
+      OnExecute = N2Click
+    end
+    object Action3: TAction
+      Caption = #38281#12376#12427
+      OnExecute = Action3Execute
+    end
   end
 end
