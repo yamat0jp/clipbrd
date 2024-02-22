@@ -130,6 +130,7 @@
             <Form>OKRightDlg</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="CBWatch.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

@@ -57,13 +57,9 @@ object Form1: TForm1
       OnChange = Edit1Change
     end
   end
-  object ClipboardWatcher1: TClipboardWatcher
-    OnChange = ClipboardWatcher1Change
-    Left = 120
-    Top = 48
-  end
   object TrayIcon1: TTrayIcon
     PopupMenu = PopupMenu1
+    Visible = True
     OnClick = TrayIcon1Click
     Left = 120
     Top = 200

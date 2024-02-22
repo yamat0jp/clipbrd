@@ -10,7 +10,6 @@ uses
 
 type
   TForm1 = class(TForm)
-    ClipboardWatcher1: TClipboardWatcher;
     Image1: TImage;
     Panel1: TPanel;
     Edit1: TEdit;
@@ -33,6 +32,7 @@ type
   private
     { Private êÈåæ }
     query: Boolean;
+    obj: TClipboardWatcher;
   public
     { Public êÈåæ }
   end;
@@ -79,19 +79,21 @@ procedure TForm1.FormCloseQuery(Sender: TObject; var CanClose: Boolean);
 begin
   Hide;
   if not query then
-    CanClose := false;
+    CanClose := false
+  else
+    obj.Free;
   TrayIcon1.Visible := not CanClose;
   query := false;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  obj := TClipboardWatcher.Create(Self);
+  obj.OnChange := ClipboardWatcher1Change;
   query := false;
   Edit1.Text := TPath.GetPicturesPath;
   SetCurrentDir(TPath.GetPicturesPath);
-  Application.ShowMainForm:=false;
-  Hide;
-  TrayIcon1.Visible:=true;
+  Application.ShowMainForm := false;
 end;
 
 procedure TForm1.N1Click(Sender: TObject);
@@ -103,8 +105,8 @@ end;
 procedure TForm1.N2Click(Sender: TObject);
 begin
   if DirectoryExists(Edit1.Text) then
-    ShellExecute(0, 'open', 'explorer.exe', PChar(Edit1.Text), nil,
-      SW_SHOWNORMAL);
+    ShellExecute(Handle, 'open', 'explorer.exe', PChar(QuotedStr(Edit1.Text)),
+      nil, SW_SHOWNORMAL);
 end;
 
 procedure TForm1.SpeedButton1Click(Sender: TObject);

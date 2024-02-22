@@ -3,7 +3,8 @@ program ClipboardWatcher;
 uses
   Vcl.Forms,
   Unit1 in 'Unit1.pas' {Form1},
-  OKCANCL2 in 'OKCANCL2.pas' {OKRightDlg};
+  OKCANCL2 in 'OKCANCL2.pas' {OKRightDlg},
+  CBWatch in 'CBWatch.pas';
 
 {$R *.res}
 
