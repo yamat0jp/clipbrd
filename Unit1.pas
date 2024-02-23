@@ -54,7 +54,8 @@ implementation
 
 {$R *.dfm}
 
-uses Clipbrd, System.IOUtils, OKCANCL2, Winapi.ShellAPI, Vcl.Samples.DirOutln;
+uses Clipbrd, System.IOUtils, OKCANCL2, Winapi.ShellAPI, Vcl.Samples.DirOutln,
+  System.StrUtils;
 
 procedure TForm1.Action3Execute(Sender: TObject);
 begin
@@ -132,7 +133,7 @@ begin
     if OKRightDlg.ShowModal = mrOK then
     begin
       s := Items[SelectedItem].FullPath;
-      Edit1.Text := 'C:\' + Copy(s, 5, Length(s));
+      Edit1.Text := ReplaceStr(s, '\\', '\');
     end;
 end;
 

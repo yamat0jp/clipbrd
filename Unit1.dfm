@@ -1,6 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  ActiveControl = Panel1
   BorderStyle = bsToolWindow
   Caption = 'ClipboardWatcher'
   ClientHeight = 303
@@ -11,8 +12,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  PopupMenu = PopupMenu1
-  PopupMode = pmExplicit
+  PopupMode = pmAuto
   OnCloseQuery = FormCloseQuery
   OnCreate = FormCreate
   TextHeight = 15
