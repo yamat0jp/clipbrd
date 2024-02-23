@@ -3,8 +3,8 @@ object Form1: TForm1
   Top = 0
   BorderStyle = bsToolWindow
   Caption = 'ClipboardWatcher'
-  ClientHeight = 315
-  ClientWidth = 418
+  ClientHeight = 303
+  ClientWidth = 410
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,8 +19,8 @@ object Form1: TForm1
   object Image1: TImage
     Left = 0
     Top = 25
-    Width = 418
-    Height = 249
+    Width = 410
+    Height = 237
     Align = alClient
     Proportional = True
     Stretch = True
@@ -46,14 +46,14 @@ object Form1: TForm1
   end
   object Panel1: TPanel
     Left = 0
-    Top = 274
-    Width = 418
+    Top = 262
+    Width = 410
     Height = 41
     Align = alBottom
     Caption = 'Panel1'
     TabOrder = 0
-    ExplicitTop = 262
-    ExplicitWidth = 410
+    ExplicitTop = 250
+    ExplicitWidth = 402
     object SpeedButton1: TSpeedButton
       Left = 378
       Top = 6
@@ -75,7 +75,7 @@ object Form1: TForm1
   object ActionToolBar1: TActionToolBar
     Left = 0
     Top = 0
-    Width = 418
+    Width = 410
     Height = 25
     ActionManager = ActionManager1
     Caption = 'ActionToolBar1'
@@ -92,7 +92,7 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     Spacing = 0
-    ExplicitWidth = 410
+    ExplicitWidth = 402
   end
   object TrayIcon1: TTrayIcon
     PopupMenu = PopupMenu1

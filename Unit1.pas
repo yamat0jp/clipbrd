@@ -148,8 +148,8 @@ end;
 
 procedure TForm1.TrayIcon1Click(Sender: TObject);
 begin
-  Show;
   TrayIcon1.Visible := false;
+  Show;
 end;
 
 end.
